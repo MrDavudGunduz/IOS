@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GestureRecognizerApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Kaan" translatesAutoresizingMaskIntoConstraints="NO" id="MOy-MO-Vgg">
+                                <rect key="frame" x="56" y="132" width="280" height="283"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Kaan" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Cx-rf-fzm">
+                                <rect key="frame" x="56" y="433" width="280" height="73"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="73" id="j1f-q1-wob"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="MOy-MO-Vgg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="56" id="7se-Rg-lvB"/>
+                            <constraint firstItem="MOy-MO-Vgg" firstAttribute="trailing" secondItem="8Cx-rf-fzm" secondAttribute="trailing" id="H44-cS-QnD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8Cx-rf-fzm" secondAttribute="bottom" constant="312" id="HIS-oi-6rm"/>
+                            <constraint firstItem="8Cx-rf-fzm" firstAttribute="top" secondItem="MOy-MO-Vgg" secondAttribute="bottom" constant="18" id="Mgv-pC-wO6"/>
+                            <constraint firstItem="MOy-MO-Vgg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kOp-XT-mpU"/>
+                            <constraint firstItem="MOy-MO-Vgg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="73" id="lIi-MD-hCx"/>
+                            <constraint firstItem="MOy-MO-Vgg" firstAttribute="leading" secondItem="8Cx-rf-fzm" secondAttribute="leading" id="s5N-py-4Yf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="MOy-MO-Vgg" id="Wi5-Ow-Vro"/>
+                        <outlet property="myLabel" destination="8Cx-rf-fzm" id="IBG-sN-QXR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="130.53435114503816" y="-27.464788732394368"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Kaan" width="299" height="168"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
