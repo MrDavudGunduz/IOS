@@ -16,8 +16,54 @@ class Details: UIViewController , UIImagePickerControllerDelegate , UINavigation
     @IBOutlet weak var artistNameTextF: UITextField!
     @IBOutlet weak var yearTextField: UITextField!
     
+    var chosenPainting = ""
+    var chosenPaintingID = UUID()
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if chosenPainting != ""{
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let context = appDelegate.persistentContainer.viewContext
+            
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Paintings")
+            let idString = chosenPaintingID.uuidString
+            fetchRequest.predicate = NSPredicate(format: "id = %@", idString)
+            fetchRequest.returnsObjectsAsFaults = false
+            
+            do {
+                let results = try context.fetch(fetchRequest)
+                
+                if results.count > 0 {
+                    for result in results as! [NSManagedObject] {
+                        if let name = result.value(forKey: "name") as? String {
+                            nameTextField.text = name
+                        }
+                        if let year = result.value(forKey: "year") as? Int {
+                            yearTextField.text = String(year)
+                        }
+                        if let artist = result.value(forKey: "artist") as? String {
+                            artistNameTextF.text = artist
+                        }
+                        if let imageData = result.value(forKey: "imahe") as? Data {
+                            let image = UIImage(data: imageData)
+                            imageView.image = image
+                        }
+                       
+                        
+                    }
+                    
+                }
+                
+            }catch{
+                
+            }
+                
+            
+            
+        }
 
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         view.addGestureRecognizer(gestureRecognizer)
@@ -31,7 +77,7 @@ class Details: UIViewController , UIImagePickerControllerDelegate , UINavigation
     @objc func selectImages(){
         let picker = UIImagePickerController()
         picker.delegate = self
-        picker.sourceType = .camera
+        picker.sourceType = .photoLibrary
         picker.allowsEditing = true
         present(picker, animated: true , completion: nil)
         
@@ -71,6 +117,11 @@ class Details: UIViewController , UIImagePickerControllerDelegate , UINavigation
         }catch {
             print("Error")
         }
+        
+        NotificationCenter.default.post(name: Notification.Name("NewData") , object: nil)
+        self.navigationController?.popViewController(animated: true)
     }
+    
+    
     
 }
