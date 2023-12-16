@@ -47,7 +47,7 @@ class Details: UIViewController , UIImagePickerControllerDelegate , UINavigation
                         if let artist = result.value(forKey: "artist") as? String {
                             artistNameTextF.text = artist
                         }
-                        if let imageData = result.value(forKey: "imahe") as? Data {
+                        if let imageData = result.value(forKey: "image") as? Data {
                             let image = UIImage(data: imageData)
                             imageView.image = image
                         }
@@ -58,7 +58,7 @@ class Details: UIViewController , UIImagePickerControllerDelegate , UINavigation
                 }
                 
             }catch{
-                
+                print("Error")
             }
                 
             
