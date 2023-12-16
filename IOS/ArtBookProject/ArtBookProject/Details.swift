@@ -16,6 +16,8 @@ class Details: UIViewController , UIImagePickerControllerDelegate , UINavigation
     @IBOutlet weak var artistNameTextF: UITextField!
     @IBOutlet weak var yearTextField: UITextField!
     
+    @IBOutlet weak var saveButton: UIButton!
+    
     var chosenPainting = ""
     var chosenPaintingID = UUID()
     
@@ -25,6 +27,9 @@ class Details: UIViewController , UIImagePickerControllerDelegate , UINavigation
         super.viewDidLoad()
         
         if chosenPainting != ""{
+            
+            saveButton.isHidden = true
+            
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             let context = appDelegate.persistentContainer.viewContext
             
@@ -52,7 +57,6 @@ class Details: UIViewController , UIImagePickerControllerDelegate , UINavigation
                             imageView.image = image
                         }
                        
-                        
                     }
                     
                 }
@@ -63,6 +67,9 @@ class Details: UIViewController , UIImagePickerControllerDelegate , UINavigation
                 
             
             
+        }else {
+            saveButton.isHidden = false
+            saveButton.isEnabled = false
         }
 
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
@@ -85,6 +92,7 @@ class Details: UIViewController , UIImagePickerControllerDelegate , UINavigation
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         imageView.image = info[.originalImage] as? UIImage
+        saveButton.isEnabled = true
         self.dismiss(animated: true, completion: nil)
     }
      

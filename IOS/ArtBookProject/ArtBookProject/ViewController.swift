@@ -32,7 +32,7 @@ class ViewController: UIViewController , UITableViewDelegate , UITableViewDataSo
     override func viewWillAppear(_ animated: Bool) {
         NotificationCenter.default.addObserver(self, selector: #selector(getData), name: Notification.Name("NewData"), object: nil)
     }
-
+    
     @objc func getData(){
         
         nameArray.removeAll(keepingCapacity: false)
@@ -48,7 +48,7 @@ class ViewController: UIViewController , UITableViewDelegate , UITableViewDataSo
             let results = try context.fetch(fetchRequest)
             
             if results.count > 0 {
-            
+                
                 for result in results as! [NSManagedObject] {
                     if let name = result.value(forKey: "name") as? String {
                         self.nameArray.append(name)
@@ -63,13 +63,12 @@ class ViewController: UIViewController , UITableViewDelegate , UITableViewDataSo
                 }
             }
             
-            
-            
         }catch{
             print("Error")
         }
+        
     }
-   
+    
     @objc func addButtonClicked(){
         selectedName = ""
         
@@ -99,6 +98,41 @@ class ViewController: UIViewController , UITableViewDelegate , UITableViewDataSo
         performSegue(withIdentifier: "toDetailsVC", sender: nil)
     }
     
-
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let context = appDelegate.persistentContainer.viewContext
+            
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Paintings")
+            let idString = idArray[indexPath.row].uuidString
+            
+            fetchRequest.predicate = NSPredicate(format: "id = %@", idString)
+            fetchRequest.returnsObjectsAsFaults = false
+            do{
+                let results = try context.fetch(fetchRequest)
+                if results.count > 0 {
+                    for result in results as! [NSManagedObject]{
+                        if let id = result.value(forKey: "id") as? UUID{
+                            if id == idArray[indexPath.row] {
+                                context.delete(result)
+                                nameArray.remove(at: indexPath.row)
+                                idArray.remove(at: indexPath.row)
+                                self.tableView.reloadData()
+                                do{
+                                    try context.save()
+                                }catch{
+                                    print("Error")
+                                }
+                                break
+                            }
+                        }
+                    }
+                }
+            }
+                catch{
+                    
+                print("Error")
+            }
+        }
+    }
 }
-
