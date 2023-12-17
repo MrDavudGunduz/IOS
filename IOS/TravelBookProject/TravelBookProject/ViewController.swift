@@ -22,6 +22,14 @@ class ViewController: UIViewController , MKMapViewDelegate , CLLocationManagerDe
     var chosenLatitude = Double()
     var chosenLongitude = Double()
     
+    var selectedTitle = ""
+    var selectedTitleID : UUID?
+    
+    var annotationTitle = ""
+    var annotationSubTitle = ""
+    var annotationLongitude = Double()
+    var annotationLatitude = Double()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
        
@@ -34,6 +42,50 @@ class ViewController: UIViewController , MKMapViewDelegate , CLLocationManagerDe
         let gestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(chooseLocation(gestureRecognizer:)))
         gestureRecognizer.minimumPressDuration = 3
         mapView.addGestureRecognizer(gestureRecognizer)
+        
+        if selectedTitle != ""{
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let context = appDelegate.persistentContainer.viewContext
+            let IDstring = selectedTitleID!.uuidString
+            
+            let fechtRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Places")
+            fechtRequest.predicate = NSPredicate(format: "id = %@", IDstring)
+            fechtRequest.returnsObjectsAsFaults = false
+            
+            do {
+                let results = try context.fetch(fechtRequest)
+                if results.count > 0 {
+                    for result in results as! [NSManagedObject]{
+                        if let title = result.value(forKey: "title") as? String{
+                            annotationTitle = title
+                            if let subtitle = result.value(forKey: "subtitle") as? String{
+                                annotationSubTitle = subtitle
+                                if let latitude = result.value(forKey: "latitude") as? Double{
+                                    annotationLatitude = latitude
+                                    if let longitude = result.value(forKey: "longitude") as? Double{
+                                        annotationLongitude = longitude
+                                        
+                                        let annotation = MKPointAnnotation()
+                                        annotation.title = annotationTitle
+                                        annotation.subtitle = annotationSubTitle
+                                        
+                                        let coordinate = CLLocationCoordinate2D(latitude: annotationLatitude, longitude: annotationLongitude)
+                                        annotation.coordinate = coordinate
+                                        mapView.addAnnotation(annotation)
+                                        
+                                        nameText.text = annotationTitle
+                                        commentText.text = annotationSubTitle
+                                        
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }catch {
+                print("Error")
+            }
+        }
     }
     
     @objc func chooseLocation(gestureRecognizer : UILongPressGestureRecognizer){
