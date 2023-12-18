@@ -79,7 +79,7 @@ class ViewController: UIViewController , MKMapViewDelegate , CLLocationManagerDe
                                                                                
                                         let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
                                         let region = MKCoordinateRegion(center: coordinate, span: span)
-                                                                               mapView.setRegion(region, animated: true)
+                                        mapView.setRegion(region, animated: true)
                                     }
                                 }
                             }
@@ -110,11 +110,15 @@ class ViewController: UIViewController , MKMapViewDelegate , CLLocationManagerDe
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let location = CLLocationCoordinate2D(latitude: locations[0].coordinate.latitude, longitude: locations[0].coordinate.longitude)
-        let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
-        let region = MKCoordinateRegion(center: location, span: span)
-        mapView.setRegion(region, animated: true)
+        if selectedTitle == "" {
+            let location = CLLocationCoordinate2D(latitude: locations[0].coordinate.latitude, longitude: locations[0].coordinate.longitude)
+            let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+            let region = MKCoordinateRegion(center: location, span: span)
+            mapView.setRegion(region, animated: true)
+        }
     }
+    
+    
 
 
     @IBAction func saveButton(_ sender: Any) {
@@ -133,6 +137,9 @@ class ViewController: UIViewController , MKMapViewDelegate , CLLocationManagerDe
         }catch{
             print("Error")
         }
+        
+        NotificationCenter.default.post(name: NSNotification.Name("newPlace"), object: nil)
+        navigationController?.popViewController(animated: true)
     }
 }
 
