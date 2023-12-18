@@ -23,7 +23,7 @@ class ViewController: UIViewController , MKMapViewDelegate , CLLocationManagerDe
     var chosenLongitude = Double()
     
     var selectedTitle = ""
-    var selectedTitleID : UUID?
+    var selectedTitleID : UUID!
     
     var annotationTitle = ""
     var annotationSubTitle = ""
@@ -43,13 +43,13 @@ class ViewController: UIViewController , MKMapViewDelegate , CLLocationManagerDe
         gestureRecognizer.minimumPressDuration = 3
         mapView.addGestureRecognizer(gestureRecognizer)
         
-        if selectedTitle != ""{
+        if selectedTitle != "" {
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             let context = appDelegate.persistentContainer.viewContext
             let IDstring = selectedTitleID!.uuidString
             
             let fechtRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Places")
-            fechtRequest.predicate = NSPredicate(format: "id = %@", IDstring)
+            fechtRequest.predicate = NSPredicate(format: "id = %@", IDstring )
             fechtRequest.returnsObjectsAsFaults = false
             
             do {
@@ -68,14 +68,18 @@ class ViewController: UIViewController , MKMapViewDelegate , CLLocationManagerDe
                                         let annotation = MKPointAnnotation()
                                         annotation.title = annotationTitle
                                         annotation.subtitle = annotationSubTitle
-                                        
                                         let coordinate = CLLocationCoordinate2D(latitude: annotationLatitude, longitude: annotationLongitude)
                                         annotation.coordinate = coordinate
+                                                                               
                                         mapView.addAnnotation(annotation)
-                                        
                                         nameText.text = annotationTitle
                                         commentText.text = annotationSubTitle
-                                        
+                                                                               
+                                        locationManager.stopUpdatingLocation()
+                                                                               
+                                        let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+                                        let region = MKCoordinateRegion(center: coordinate, span: span)
+                                                                               mapView.setRegion(region, animated: true)
                                     }
                                 }
                             }

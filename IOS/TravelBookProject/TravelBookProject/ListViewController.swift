@@ -11,6 +11,7 @@ import CoreData
 class ListViewController: UIViewController , UITableViewDelegate , UITableViewDataSource{
    
     @IBOutlet weak var tableView: UITableView!
+    
     var titleArray = [String]()
     var idArray = [UUID]()
     var chosenTitle = ""
@@ -23,6 +24,8 @@ class ListViewController: UIViewController , UITableViewDelegate , UITableViewDa
         
         tableView.dataSource = self
         tableView.delegate = self
+        
+        getData()
        
     }
     
@@ -63,6 +66,7 @@ class ListViewController: UIViewController , UITableViewDelegate , UITableViewDa
     
     
     @objc func addButtonClicked(){
+        chosenTitle = ""
         performSegue(withIdentifier: "toViewController", sender: nil)
     }
     
@@ -90,5 +94,6 @@ class ListViewController: UIViewController , UITableViewDelegate , UITableViewDa
             
         }
     }
+    
 
 }
