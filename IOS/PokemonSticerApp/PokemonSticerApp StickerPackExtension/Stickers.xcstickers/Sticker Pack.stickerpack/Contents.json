@@ -1,0 +1,23 @@
+{
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "grid-size" : "regular"
+  },
+  "stickers" : [
+    {
+      "filename" : "003-Venusaur-icon.sticker"
+    },
+    {
+      "filename" : "002-Ivysaur-icon.sticker"
+    },
+    {
+      "filename" : "006-Charizard-icon.sticker"
+    },
+    {
+      "filename" : "025-Pikachu-icon.sticker"
+    }
+  ]
+}
