@@ -18,6 +18,9 @@
 		E9091FF92B397C7A00518035 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = E9091FF82B397C7A00518035 /* FirebaseStorage */; };
 		E9091FFB2B397C8500518035 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = E9091FFA2B397C8500518035 /* FirebaseAuth */; };
 		E9091FFD2B397C9300518035 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = E9091FFC2B397C9300518035 /* FirebaseFirestore */; };
+		E9A3D7372B3AA85F0079AF45 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A3D7362B3AA85F0079AF45 /* FeedVC.swift */; };
+		E9A3D7392B3AA8800079AF45 /* UploadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A3D7382B3AA8800079AF45 /* UploadVC.swift */; };
+		E9A3D73B2B3AA8A70079AF45 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A3D73A2B3AA8A70079AF45 /* SettingsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		E9091FB42B3966DA00518035 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E9091FB62B3966DA00518035 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E9091FBC2B39674D00518035 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E9A3D7362B3AA85F0079AF45 /* FeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
+		E9A3D7382B3AA8800079AF45 /* UploadVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadVC.swift; sourceTree = "<group>"; };
+		E9A3D73A2B3AA8A70079AF45 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +76,9 @@
 				E9091FA82B3966D900518035 /* AppDelegate.swift */,
 				E9091FAA2B3966D900518035 /* SceneDelegate.swift */,
 				E9091FAC2B3966D900518035 /* ViewController.swift */,
+				E9A3D7362B3AA85F0079AF45 /* FeedVC.swift */,
+				E9A3D7382B3AA8800079AF45 /* UploadVC.swift */,
+				E9A3D73A2B3AA8A70079AF45 /* SettingsVC.swift */,
 				E9091FAE2B3966D900518035 /* Main.storyboard */,
 				E9091FB12B3966DA00518035 /* Assets.xcassets */,
 				E9091FB32B3966DA00518035 /* LaunchScreen.storyboard */,
@@ -167,9 +176,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9A3D7372B3AA85F0079AF45 /* FeedVC.swift in Sources */,
 				E9091FAD2B3966D900518035 /* ViewController.swift in Sources */,
 				E9091FA92B3966D900518035 /* AppDelegate.swift in Sources */,
+				E9A3D7392B3AA8800079AF45 /* UploadVC.swift in Sources */,
 				E9091FAB2B3966D900518035 /* SceneDelegate.swift in Sources */,
+				E9A3D73B2B3AA8A70079AF45 /* SettingsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
