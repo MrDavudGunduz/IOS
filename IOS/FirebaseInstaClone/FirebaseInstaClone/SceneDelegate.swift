@@ -25,9 +25,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let board = UIStoryboard(name: "Main", bundle: nil)
             let tabBar = board.instantiateViewController(identifier: "tabBar") as! UITabBarController
             window?.rootViewController = tabBar
-            
-            
         }
+        
         
         guard let _ = (scene as? UIWindowScene) else { return }
     }
