@@ -56,6 +56,21 @@ class UploadVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
                             
                             // DATABASE
                             
+                            let firestoreDatabase = Firestore.firestore()
+                            var firestoreRef : DocumentReference? = nil
+                            
+                            let firestorePost = ["imageUrl" : imageUrl! , "postedBy" : Auth.auth().currentUser!.email! , "postComment" : self.commentTextField.text as Any , "date" : FieldValue.serverTimestamp() , "likes" : 0] as [String : Any]
+                            
+                            firestoreRef = firestoreDatabase.collection("Posts").addDocument(data: firestorePost, completion: { error in
+                                if error != nil {
+                                    self.makeAlert(titleInput: "Error", messageInput: error!.localizedDescription )
+                                }else{
+                                    self.imageView.image = UIImage(named: "select-2")
+                                    self.commentTextField.text = ""
+                                    self.tabBarController?.selectedIndex = 0
+                                }
+                            })
+                            
                         }
                     }
                 }
