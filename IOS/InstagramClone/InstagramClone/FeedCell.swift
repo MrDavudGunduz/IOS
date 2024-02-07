@@ -31,4 +31,6 @@ class FeedCell: UITableViewCell {
 
     @IBAction func likeButton(_ sender: Any) {
     }
+    
+ 
 }
