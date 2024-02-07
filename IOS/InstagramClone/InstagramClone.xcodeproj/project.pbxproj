@@ -10,6 +10,7 @@
 		E925D9B22B66A2680045FF69 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E925D9B12B66A2680045FF69 /* FeedViewController.swift */; };
 		E925D9B42B66A2780045FF69 /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E925D9B32B66A2780045FF69 /* UploadViewController.swift */; };
 		E925D9B62B66A2880045FF69 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E925D9B52B66A2880045FF69 /* SettingsViewController.swift */; };
+		E962A7912B737E5F00F18745 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E962A7902B737E5F00F18745 /* FeedCell.swift */; };
 		E999713B2B60F3C000A97873 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E999713A2B60F3C000A97873 /* GoogleService-Info.plist */; };
 		E999713E2B60F57600A97873 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = E999713D2B60F57600A97873 /* FirebaseAnalytics */; };
 		E999714A2B60F57600A97873 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = E99971492B60F57600A97873 /* FirebaseAuth */; };
@@ -27,6 +28,7 @@
 		E925D9B12B66A2680045FF69 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		E925D9B32B66A2780045FF69 /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		E925D9B52B66A2880045FF69 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		E962A7902B737E5F00F18745 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		E999713A2B60F3C000A97873 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E9E2FCA42B6048D60000C2D7 /* InstagramClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9E2FCA72B6048D60000C2D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				E9E2FCAB2B6048D60000C2D7 /* ViewController.swift */,
 				E925D9B32B66A2780045FF69 /* UploadViewController.swift */,
 				E925D9B12B66A2680045FF69 /* FeedViewController.swift */,
+				E962A7902B737E5F00F18745 /* FeedCell.swift */,
 				E925D9B52B66A2880045FF69 /* SettingsViewController.swift */,
 				E9E2FCAD2B6048D60000C2D7 /* Main.storyboard */,
 				E9E2FCB02B6048D70000C2D7 /* Assets.xcassets */,
@@ -168,6 +171,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E962A7912B737E5F00F18745 /* FeedCell.swift in Sources */,
 				E9E2FCAC2B6048D60000C2D7 /* ViewController.swift in Sources */,
 				E925D9B42B66A2780045FF69 /* UploadViewController.swift in Sources */,
 				E9E2FCA82B6048D60000C2D7 /* AppDelegate.swift in Sources */,
