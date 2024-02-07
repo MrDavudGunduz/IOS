@@ -16,27 +16,29 @@ class UploadViewController: UIViewController , UIImagePickerControllerDelegate ,
     @IBOutlet weak var uploadButton: UIButton!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+           super.viewDidLoad()
 
-        imageView.isUserInteractionEnabled = true
-        let gestureRecognizer = UIGestureRecognizer(target: self, action: #selector(chooseImage))
-        imageView.addGestureRecognizer(gestureRecognizer)
-    }
-    
-    @objc func chooseImage(){
-        let pickerController = UIImagePickerController()
-        pickerController.delegate = self
-        pickerController.sourceType = .photoLibrary
-        present(pickerController, animated: true, completion: nil)
-    }
-    
-    
+           imageView.isUserInteractionEnabled = true
+           let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(chooseImage))
+           imageView.addGestureRecognizer(gestureRecognizer)
+           
+       }
+       
+       @objc func chooseImage() {
+           
+           let pickerController = UIImagePickerController()
+           pickerController.delegate = self
+           pickerController.sourceType = .camera
+           present(pickerController, animated: true, completion: nil)
+           
+       }
+       
+       
        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
            imageView.image = info[.originalImage] as? UIImage
            self.dismiss(animated: true, completion: nil)
        }
-
-   
+       
     @IBAction func saveClicked(_ sender: Any) {
         let storage = Storage.storage()
         let storageReference = storage.reference()
@@ -49,14 +51,27 @@ class UploadViewController: UIViewController , UIImagePickerControllerDelegate ,
                 if error != nil{
                     self.makeAlert(titleInput: "Error!", messageInput: error?.localizedDescription ?? "Error!")
                 }else {
-                    imageReference.downloadURL { url, error in
+                    imageReference.downloadURL { [self] url, error in
                         if error != nil{
+                            
                             self.makeAlert(titleInput: "Error!", messageInput: error?.localizedDescription ?? "Error!")
+                            
                         }else {
+                            
                             let imageUrl = url?.absoluteString
                             
                             // DATABASE
+                            let firestoreDatabase = Firestore.firestore()
                             
+                            var firestoreReference : DocumentReference
+                            
+                            let firestorePost = ["imageUrl" : imageUrl ?? imageView.image as Any ,"postedBy" : Auth.auth().currentUser!.email!,"postComment" : textField.text ?? "Post Comment never include" , "date" : "date" , "likes" : 0] as [String : Any]
+                            
+                            firestoreReference = firestoreDatabase.collection("Pots").addDocument(data: firestorePost , completion: { error in
+                                if error != nil {
+                                    self.makeAlert(titleInput: "Error!", messageInput: error?.localizedDescription ?? "Error!")
+                                } 
+                            })
                             
                         }
                     }

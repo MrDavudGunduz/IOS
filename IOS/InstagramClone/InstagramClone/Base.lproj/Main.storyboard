@@ -72,15 +72,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tyn-El-JNE">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tyn-El-JNE">
                                 <rect key="frame" x="146" y="404" width="101" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Logout"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="QJb-kL-lsn"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tyn-El-JNE" firstAttribute="leading" secondItem="QJb-kL-lsn" secondAttribute="leading" constant="146" id="fAg-MX-diI"/>
+                            <constraint firstItem="tyn-El-JNE" firstAttribute="top" secondItem="QJb-kL-lsn" secondAttribute="top" constant="404" id="reh-0k-iUT"/>
+                            <constraint firstItem="tyn-El-JNE" firstAttribute="centerX" secondItem="0VY-P4-NoF" secondAttribute="centerX" id="uX0-av-58U"/>
+                            <constraint firstItem="tyn-El-JNE" firstAttribute="centerY" secondItem="0VY-P4-NoF" secondAttribute="centerY" id="zzF-tJ-5C7"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" selectedImage="s.circle.fill" catalog="system" id="Xyp-ch-bbl"/>
                     <connections>
