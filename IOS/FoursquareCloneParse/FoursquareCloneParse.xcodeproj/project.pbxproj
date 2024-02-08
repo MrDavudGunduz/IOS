@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E9456BFB2B752A3F00C11084 /* ParseFacebookUtilsTvOS in Frameworks */ = {isa = PBXBuildFile; productRef = E9456BFA2B752A3F00C11084 /* ParseFacebookUtilsTvOS */; };
+		E9456BFD2B752A3F00C11084 /* ParseFacebookUtilsiOS in Frameworks */ = {isa = PBXBuildFile; productRef = E9456BFC2B752A3F00C11084 /* ParseFacebookUtilsiOS */; };
+		E9456BFF2B752A3F00C11084 /* ParseLiveQuery in Frameworks */ = {isa = PBXBuildFile; productRef = E9456BFE2B752A3F00C11084 /* ParseLiveQuery */; };
+		E9456C012B752A3F00C11084 /* ParseObjC in Frameworks */ = {isa = PBXBuildFile; productRef = E9456C002B752A3F00C11084 /* ParseObjC */; };
+		E9456C032B752A3F00C11084 /* ParseTwitterUtils in Frameworks */ = {isa = PBXBuildFile; productRef = E9456C022B752A3F00C11084 /* ParseTwitterUtils */; };
+		E9456C052B752A3F00C11084 /* ParseUI in Frameworks */ = {isa = PBXBuildFile; productRef = E9456C042B752A3F00C11084 /* ParseUI */; };
 		E96961FB2B7503B400FDADDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96961FA2B7503B400FDADDD /* AppDelegate.swift */; };
 		E96961FD2B7503B400FDADDD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96961FC2B7503B400FDADDD /* SceneDelegate.swift */; };
 		E96961FF2B7503B400FDADDD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96961FE2B7503B400FDADDD /* ViewController.swift */; };
@@ -31,6 +37,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9456C052B752A3F00C11084 /* ParseUI in Frameworks */,
+				E9456BFD2B752A3F00C11084 /* ParseFacebookUtilsiOS in Frameworks */,
+				E9456C032B752A3F00C11084 /* ParseTwitterUtils in Frameworks */,
+				E9456BFF2B752A3F00C11084 /* ParseLiveQuery in Frameworks */,
+				E9456C012B752A3F00C11084 /* ParseObjC in Frameworks */,
+				E9456BFB2B752A3F00C11084 /* ParseFacebookUtilsTvOS in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +95,14 @@
 			dependencies = (
 			);
 			name = FoursquareCloneParse;
+			packageProductDependencies = (
+				E9456BFA2B752A3F00C11084 /* ParseFacebookUtilsTvOS */,
+				E9456BFC2B752A3F00C11084 /* ParseFacebookUtilsiOS */,
+				E9456BFE2B752A3F00C11084 /* ParseLiveQuery */,
+				E9456C002B752A3F00C11084 /* ParseObjC */,
+				E9456C022B752A3F00C11084 /* ParseTwitterUtils */,
+				E9456C042B752A3F00C11084 /* ParseUI */,
+			);
 			productName = FoursquareCloneParse;
 			productReference = E96961F72B7503B400FDADDD /* FoursquareCloneParse.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +131,9 @@
 				Base,
 			);
 			mainGroup = E96961EE2B7503B400FDADDD;
+			packageReferences = (
+				E9456BF92B752A3F00C11084 /* XCRemoteSwiftPackageReference "Parse-SDK-iOS-OSX" */,
+			);
 			productRefGroup = E96961F82B7503B400FDADDD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -363,6 +386,50 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E9456BF92B752A3F00C11084 /* XCRemoteSwiftPackageReference "Parse-SDK-iOS-OSX" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/parse-community/Parse-SDK-iOS-OSX";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.7.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E9456BFA2B752A3F00C11084 /* ParseFacebookUtilsTvOS */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E9456BF92B752A3F00C11084 /* XCRemoteSwiftPackageReference "Parse-SDK-iOS-OSX" */;
+			productName = ParseFacebookUtilsTvOS;
+		};
+		E9456BFC2B752A3F00C11084 /* ParseFacebookUtilsiOS */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E9456BF92B752A3F00C11084 /* XCRemoteSwiftPackageReference "Parse-SDK-iOS-OSX" */;
+			productName = ParseFacebookUtilsiOS;
+		};
+		E9456BFE2B752A3F00C11084 /* ParseLiveQuery */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E9456BF92B752A3F00C11084 /* XCRemoteSwiftPackageReference "Parse-SDK-iOS-OSX" */;
+			productName = ParseLiveQuery;
+		};
+		E9456C002B752A3F00C11084 /* ParseObjC */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E9456BF92B752A3F00C11084 /* XCRemoteSwiftPackageReference "Parse-SDK-iOS-OSX" */;
+			productName = ParseObjC;
+		};
+		E9456C022B752A3F00C11084 /* ParseTwitterUtils */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E9456BF92B752A3F00C11084 /* XCRemoteSwiftPackageReference "Parse-SDK-iOS-OSX" */;
+			productName = ParseTwitterUtils;
+		};
+		E9456C042B752A3F00C11084 /* ParseUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E9456BF92B752A3F00C11084 /* XCRemoteSwiftPackageReference "Parse-SDK-iOS-OSX" */;
+			productName = ParseUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E96961EF2B7503B400FDADDD /* Project object */;
 }
