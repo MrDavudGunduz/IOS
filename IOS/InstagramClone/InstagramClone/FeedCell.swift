@@ -17,6 +17,7 @@ class FeedCell: UITableViewCell {
     
     @IBOutlet weak var likeLabel: UILabel!
     
+    @IBOutlet weak var hiddenLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,6 +31,7 @@ class FeedCell: UITableViewCell {
     }
 
     @IBAction func likeButton(_ sender: Any) {
+        
     }
     
  
