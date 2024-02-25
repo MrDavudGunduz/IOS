@@ -10,6 +10,12 @@ import Parse
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var usernameText: UITextField!
+    
+    @IBOutlet weak var emailText: UITextField!
+    
+    @IBOutlet weak var passwordText: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
        
@@ -24,19 +30,51 @@ class ViewController: UIViewController {
                 
             } */
         
-        let query = PFQuery(className: "user")
+       /* let query = PFQuery(className: "user")
         query.findObjectsInBackground { objects, error in
             if error != nil {
                 self.makeAlert(title: "Error!", message: error!.localizedDescription)
             }else{
                 query.whereKey( "name", equalTo: "Davud")
-                
-            }
+            } */
         
         
         }
+    
+    
+    @IBAction func loginClicked(_ sender: Any) {
         
-        
+    }
+    
+    @IBAction func signUpClicked(_ sender: Any) {
+        if usernameText.text != ""  {
+            if emailText.text != "" {
+                if passwordText.text != "" {
+                    let user = PFUser()
+                    user.username = usernameText.text!
+                    user.email = emailText.text!
+                    user.password = passwordText.text!
+                    
+                    user.signUpInBackground { succes, error in
+                        if error != nil {
+                            self.makeAlert(title: "Error!", message: error!.localizedDescription)
+                        }else
+                        {
+                            // Segue
+                            
+                        }
+                    }
+                    
+                }else
+                {
+                    self.makeAlert(title: "Error!", message: "Please enter your username.")
+                }
+            }else{
+                self.makeAlert(title: "Error!", message: "Please enter your email.")
+            }
+        }else{
+            self.makeAlert(title: "Error!", message: "Please enter your password.")
+        }
     }
     
     func makeAlert(title : String , message : String){
@@ -46,6 +84,10 @@ class ViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
+    }
+    
+  
+    
 
-}
+
 
