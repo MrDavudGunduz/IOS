@@ -43,7 +43,19 @@ class ViewController: UIViewController {
     
     
     @IBAction func loginClicked(_ sender: Any) {
-        
+        if usernameText.text != "" && emailText.text != "" && passwordText.text != "" {
+            PFUser.logInWithUsername(inBackground: usernameText.text!, password: passwordText.text!) { user, error in
+                if error != nil {
+                    self.makeAlert(title: "Error!", message: error!.localizedDescription)
+                }else
+                {
+                    
+                }
+            }
+        }else
+        {
+            self.makeAlert(title: "Error!", message: "Username , Email or password not found ")
+        }
     }
     
     @IBAction func signUpClicked(_ sender: Any) {
