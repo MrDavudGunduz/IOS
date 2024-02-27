@@ -49,7 +49,9 @@ class ViewController: UIViewController {
                     self.makeAlert(title: "Error!", message: error!.localizedDescription)
                 }else
                 {
+                    // segue
                     
+                    self.performSegue(withIdentifier: "toPlacesVC", sender: nil)
                 }
             }
         }else
@@ -73,7 +75,7 @@ class ViewController: UIViewController {
                         }else
                         {
                             // Segue
-                            
+                            self.performSegue(withIdentifier: "toPlacesVC", sender: nil)
                         }
                     }
                     
