@@ -17,11 +17,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
       
         let currentUser = PFUser.current()
         if currentUser != nil {
-            let board = UIStoryboard(name: "main", bundle: nil)
+            let board = UIStoryboard(name: "Main", bundle: nil)
             let navigationController = board.instantiateViewController(identifier: "navigationController") as! UINavigationController
             window?.rootViewController = navigationController
         }
-        
         
         guard let _ = (scene as? UIWindowScene) else { return }
     }
