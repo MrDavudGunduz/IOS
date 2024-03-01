@@ -50,7 +50,6 @@ class ViewController: UIViewController {
                 }else
                 {
                     // segue
-                    
                     self.performSegue(withIdentifier: "toPlacesVC", sender: nil)
                 }
             }

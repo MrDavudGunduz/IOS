@@ -36,8 +36,13 @@ class AddPlacesVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
             if placesTypeText.text! != "" {
                 if placesLocationText.text! != "" {
                     if placesCommentText.text! != "" {
-                        let placesModel = PlacesModel.Places(name: placesNameText.text!, type: placesTypeText.text!, atmosphere: placesLocationText.text!, image: imageView.image!)
                         
+                        let placesModel = PlacesModel.sharedInstance.self
+                        placesModel.name = placesNameText.text!
+                        placesModel.type = placesTypeText.text!
+                        placesModel.atmosphere = placesLocationText.text!
+                        placesModel.comment = placesCommentText.text!
+                        placesModel.image = imageView.image!
                         self.performSegue(withIdentifier: "toMapKit", sender: nil)
                         
                     }else{
