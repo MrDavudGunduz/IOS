@@ -100,17 +100,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="kzU-R8-Wq0">
-                                <rect key="frame" x="0.0" y="34" width="393" height="798"/>
+                                <rect key="frame" x="0.0" y="-10" width="393" height="842"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CwO-5n-2wo"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="kzU-R8-Wq0" secondAttribute="trailing" id="fdG-Wj-fa0"/>
-                            <constraint firstItem="kzU-R8-Wq0" firstAttribute="top" secondItem="vip-BC-BaX" secondAttribute="topMargin" constant="-10" id="sxu-1D-fHY"/>
-                            <constraint firstAttribute="bottom" secondItem="kzU-R8-Wq0" secondAttribute="bottom" constant="20" symbolic="YES" id="tEy-GF-NqU"/>
-                            <constraint firstItem="kzU-R8-Wq0" firstAttribute="leading" secondItem="vip-BC-BaX" secondAttribute="leading" id="wEg-7A-dwR"/>
+                            <constraint firstItem="kzU-R8-Wq0" firstAttribute="centerX" secondItem="vip-BC-BaX" secondAttribute="centerX" id="2fA-g1-6gq"/>
+                            <constraint firstItem="kzU-R8-Wq0" firstAttribute="leading" secondItem="CwO-5n-2wo" secondAttribute="leading" id="GEA-Vx-Dca"/>
+                            <constraint firstItem="CwO-5n-2wo" firstAttribute="bottom" secondItem="kzU-R8-Wq0" secondAttribute="bottom" constant="20" id="hOJ-Gq-lpI"/>
+                            <constraint firstItem="kzU-R8-Wq0" firstAttribute="top" secondItem="vip-BC-BaX" secondAttribute="topMargin" constant="-10" id="oFh-4a-c7M"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="5Ij-Yb-xWd"/>
@@ -129,7 +129,7 @@
             <objects>
                 <viewController id="KT9-MD-Cgp" customClass="AddPlacesVC" customModule="FoursquareClone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NQr-WE-UwE">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Places Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Omt-Lz-RAo">
@@ -327,11 +327,11 @@
             <objects>
                 <viewController id="Uum-1h-AfX" customClass="MapVC" customModule="FoursquareClone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XHK-lw-cd7">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kw3-9y-zNq">
-                                <rect key="frame" x="0.0" y="44" width="393" height="808"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
                         </subviews>
@@ -348,6 +348,7 @@
                     <connections>
                         <outlet property="mapView" destination="kw3-9y-zNq" id="6nx-f1-uJM"/>
                         <outlet property="mapkit" destination="kw3-9y-zNq" id="VbJ-6s-GSz"/>
+                        <segue destination="K54-fs-Li8" kind="presentation" identifier="fromMapToPlacesVC" modalPresentationStyle="fullScreen" id="uUZ-vL-uqQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CL8-Mw-OFs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -373,6 +374,9 @@
             <point key="canvasLocation" x="1158" y="-28"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="uUZ-vL-uqQ"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="selectimage" width="286" height="321"/>
         <systemColor name="systemBackgroundColor">

@@ -7,6 +7,7 @@
 
 import UIKit
 import MapKit
+import Parse
 
 class MapVC: UIViewController , MKMapViewDelegate , CLLocationManagerDelegate {
 
@@ -59,6 +60,37 @@ class MapVC: UIViewController , MKMapViewDelegate , CLLocationManagerDelegate {
     @objc func saveButtonClicked(){
         // Parse save prosses
         
+        let placesModel = PlacesModel.sharedInstance
+        
+        let object = PFObject(className: "Places")
+        object["name"] = placesModel.name
+        object["type"] = placesModel.type
+        object["atmosphere"] = placesModel.atmosphere
+        object["comment"] = placesModel.comment
+        object["latitude"] = self.choosenLatitude
+        object["longitude"] = self.choosenLongitude
+        
+        // image save
+        
+        if let imageData = placesModel.image.jpegData(compressionQuality: 0.5){
+            object["image"] = PFFileObject(name: "\(UUID.self).jpg", data: imageData)
+        }
+        
+        object.saveInBackground { succes, error in
+            if error != nil {
+                self.makeAlert(title: "Error!", message: error!.localizedDescription)
+            }else
+            {
+                self.performSegue(withIdentifier: "fromMapToPlacesVC", sender: nil)
+            }
+        }
+    }
+    
+    func makeAlert(title : String , message : String){
+        let alert = UIAlertController(title: title , message: message, preferredStyle: UIAlertController.Style.alert)
+        let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
+        alert.addAction(okButton)
+        self.present(alert, animated: true, completion: nil)
     }
 
 }
