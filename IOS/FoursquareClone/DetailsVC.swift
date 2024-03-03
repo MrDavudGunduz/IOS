@@ -22,13 +22,20 @@ class DetailsVC: UIViewController {
     
     @IBOutlet weak var mapKit: MKMapView!
     
-    var ChoosenPlacesID = String()
+    var choosenPlacesID = String()
+    var choosenLatitude = Double()
+    var choosenLongitude = Double()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+       
+        getDataFromParse()
+    }
+    
+    func getDataFromParse(){
         let query = PFQuery(className: "Places")
-        query.whereKey("objectsId", equalTo: ChoosenPlacesID)
+        query.whereKey("objectsId", equalTo: choosenPlacesID)
         query.findObjectsInBackground { objects, error in
             if error != nil {
                 self.makeAlert(title: "Error!", message: error?.localizedDescription ?? "Error!")
@@ -49,6 +56,30 @@ class DetailsVC: UIViewController {
                                 if let placesComment = choosenPlacesObj.object(forKey: "comment") as? String{
                                     self.placesCommentLabel.text! = placesComment
                                     
+                                    if let placesLatitude = choosenPlacesObj.object(forKey: "latitude") as? String{
+                                        if let placesLatitudeDouble = Double(placesLatitude) {
+                                            self.choosenLatitude = placesLatitudeDouble
+                                            
+                                            if let placesLongitude = choosenPlacesObj.object(forKey: "longitude") as? String{
+                                                if let placesLongitudeDouble = Double(placesLongitude) {
+                                                    self.choosenLongitude = placesLongitudeDouble
+                                                    
+                                                    if let placesImageData = choosenPlacesObj.object(forKey: "image") as? PFFileObject{
+                                                        placesImageData.getDataInBackground { data, error in
+                                                            if error != nil {
+                                                                self.makeAlert(title: "Error!", message: error?.localizedDescription ?? "Error")
+                                                            }else {
+                                                                if data != nil {
+                                                                    self.imageView.image = UIImage(data: data!)
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                    
+                                                }
+                                            }
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -56,6 +87,7 @@ class DetailsVC: UIViewController {
                 }
             }
         }
+        
     }
     
     func makeAlert(title : String , message : String){
@@ -65,4 +97,4 @@ class DetailsVC: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-}
+    }
