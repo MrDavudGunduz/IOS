@@ -81,7 +81,7 @@ class PlacesVC: UIViewController , UITableViewDelegate , UITableViewDataSource{
         if segue.identifier == "toDetailsVC" {
             let destination = segue.destination as! DetailsVC
             
-            destination.ChoosenPlacesID = selectedPlacesID
+            destination.choosenPlacesID = selectedPlacesID
             
         }
     }

@@ -9,7 +9,7 @@ import UIKit
 import MapKit
 import Parse
 
-class DetailsVC: UIViewController {
+class DetailsVC: UIViewController , MKMapViewDelegate , CLLocationManagerDelegate{
     @IBOutlet weak var imageView: UIImageView!
     
     @IBOutlet weak var placeNameLabel: UILabel!
@@ -31,6 +31,9 @@ class DetailsVC: UIViewController {
         
        
         getDataFromParse()
+        
+        mapKit.delegate = self
+        
     }
     
     func getDataFromParse(){
@@ -64,6 +67,17 @@ class DetailsVC: UIViewController {
                                                 if let placesLongitudeDouble = Double(placesLongitude) {
                                                     self.choosenLongitude = placesLongitudeDouble
                                                     
+                                                    let location = CLLocationCoordinate2D(latitude: self.choosenLatitude, longitude: self.choosenLongitude)
+                                                    let span = MKCoordinateSpan(latitudeDelta: 0.020, longitudeDelta: 0.020)
+                                                    let region = MKCoordinateRegion(center: location, span: span)
+                                                    self.mapKit.setRegion(region, animated: true)
+                                                    
+                                                    let annotation = MKPointAnnotation()
+                                                    annotation.coordinate = location
+                                                    annotation.title = self.placeNameLabel.text
+                                                    annotation.subtitle = self.placesTypeLabel.text
+                                                    self.mapKit.addAnnotation(annotation)
+                                                    
                                                     if let placesImageData = choosenPlacesObj.object(forKey: "image") as? PFFileObject{
                                                         placesImageData.getDataInBackground { data, error in
                                                             if error != nil {
@@ -88,6 +102,52 @@ class DetailsVC: UIViewController {
             }
         }
         
+    }
+    
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if annotation is MKUserLocation{
+            return nil
+        }
+        
+        let reuseID = "pin"
+        
+        var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseID)
+        
+        if pinView == nil {
+            pinView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseID)
+            pinView?.canShowCallout = true
+            let button = UIButton(type: .detailDisclosure)
+            pinView?.rightCalloutAccessoryView = button
+            
+            
+        }else
+        {
+            pinView?.annotation = annotation
+        }
+        
+        return pinView
+        
+    }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        if self.choosenLatitude != 0.0 && self.choosenLongitude != 0.0 {
+            let requestLocation = CLLocation(latitude: self.choosenLatitude, longitude: self.choosenLongitude)
+            
+            CLGeocoder().reverseGeocodeLocation(requestLocation) { placesMark, error in
+                
+                if let placeMark = placesMark {
+                    if placeMark.count > 0 {
+                        let mkPlaceMark = MKPlacemark(placemark: placeMark[0])
+                        let mapItem = MKMapItem(placemark: mkPlaceMark)
+                        mapItem.name = self.placeNameLabel.text!
+                        
+                        let launchOptions = [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving]
+                        mapItem.openInMaps(launchOptions : launchOptions)
+                    }
+                }
+            }
+        }
     }
     
     func makeAlert(title : String , message : String){
