@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MLImagesRecognition" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="16y-Uv-Y2E">
+                                <rect key="frame" x="38" y="122" width="317" height="289"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yid-ml-HVG">
+                                <rect key="frame" x="38" y="450" width="317" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="ZIv-jG-HqW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iIY-Sb-eoj">
+                                <rect key="frame" x="161" y="522" width="72" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Select"/>
+                                <connections>
+                                    <action selector="selectClickedButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JNm-Nr-tB8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="iIY-Sb-eoj" secondAttribute="bottom" constant="261" id="8UP-AL-cfL"/>
+                            <constraint firstItem="16y-Uv-Y2E" firstAttribute="trailing" secondItem="Yid-ml-HVG" secondAttribute="trailing" id="8br-0D-24d"/>
+                            <constraint firstItem="16y-Uv-Y2E" firstAttribute="leading" secondItem="Yid-ml-HVG" secondAttribute="leading" id="H8E-Aa-AJt"/>
+                            <constraint firstItem="Yid-ml-HVG" firstAttribute="top" secondItem="16y-Uv-Y2E" secondAttribute="bottom" constant="39" id="HmQ-fw-CiJ"/>
+                            <constraint firstItem="iIY-Sb-eoj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="161" id="IDC-Pd-lh5"/>
+                            <constraint firstItem="16y-Uv-Y2E" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ME8-lJ-vud"/>
+                            <constraint firstItem="16y-Uv-Y2E" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="63" id="TqB-YF-PQN"/>
+                            <constraint firstItem="Yid-ml-HVG" firstAttribute="centerX" secondItem="iIY-Sb-eoj" secondAttribute="centerX" id="a3l-aD-2XK"/>
+                            <constraint firstItem="iIY-Sb-eoj" firstAttribute="top" secondItem="Yid-ml-HVG" secondAttribute="bottom" constant="32" id="gdO-08-PBT"/>
+                            <constraint firstItem="16y-Uv-Y2E" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="38" id="rw3-EA-R0n"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="16y-Uv-Y2E" id="O2O-Ml-6Iv"/>
+                        <outlet property="resultLabel" destination="Yid-ml-HVG" id="zWx-pL-TQM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="130.53435114503816" y="-27.464788732394368"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
