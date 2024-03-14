@@ -19,6 +19,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Set the view's delegate
         sceneView.delegate = self
         
+       /*
         let myBox = SCNBox(width: 0.1, height: 0.1, length: 0.1, chamferRadius: 0.001)
         let boxMaterial = SCNMaterial()
         
@@ -32,6 +33,22 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         node.geometry = myBox
         
         sceneView.scene.rootNode.addChildNode(node)
+        */
+        
+        let sphere = SCNSphere(radius: 0.5)
+        let sphereMetarial = SCNMaterial()
+        
+        sphereMetarial.diffuse.contents = UIImage(named: "Desktop/AI/space.jpeg")
+        sphere.materials = [sphereMetarial]
+        
+        let sphereNode = SCNNode()
+        sphereNode .position = SCNVector3(0.1, 0.1, -0.5)
+        sphereNode .geometry = sphere
+        
+        sceneView.scene.rootNode.addChildNode(sphereNode)
+        
+        
+        
         
         
         
