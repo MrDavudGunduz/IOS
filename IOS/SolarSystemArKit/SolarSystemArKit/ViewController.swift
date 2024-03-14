@@ -35,23 +35,29 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.scene.rootNode.addChildNode(node)
         */
         
-        let sphere = SCNSphere(radius: 0.5)
+        let world = createdSphere(radius: 0.1 , namedImage: "world.jpeg", vector3: SCNVector3(0.1, 0.1, -0.3))
+        
+        let saturn = createdSphere(radius: 8 , namedImage: "saturn.jpeg", vector3: SCNVector3(0.2, 0.3, -2))
+        
+        let mars = createdSphere(radius: 0.2 , namedImage: "mars.jpeg", vector3: SCNVector3(0.5, 0.5, -5))
+        
+        sceneView.scene.rootNode.addChildNode(world)
+        sceneView.scene.rootNode.addChildNode(saturn)
+        sceneView.scene.rootNode.addChildNode(mars)
+        
+    }
+    
+    func createdSphere(radius : Float , namedImage : String , vector3 : SCNVector3 ) -> SCNNode {
+        let sphere = SCNSphere(radius: CGFloat(radius))
         let sphereMetarial = SCNMaterial()
         
-        sphereMetarial.diffuse.contents = UIImage(named: "Desktop/AI/space.jpeg")
+        sphereMetarial.diffuse.contents = UIImage(named: namedImage)
         sphere.materials = [sphereMetarial]
         
         let sphereNode = SCNNode()
-        sphereNode .position = SCNVector3(0.1, 0.1, -0.5)
+        sphereNode .position = vector3
         sphereNode .geometry = sphere
-        
-        sceneView.scene.rootNode.addChildNode(sphereNode)
-        
-        
-        
-        
-        
-        
+        return sphereNode
     }
     
     override func viewWillAppear(_ animated: Bool) {
