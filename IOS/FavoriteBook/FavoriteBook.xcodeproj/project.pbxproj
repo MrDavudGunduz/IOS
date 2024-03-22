@@ -12,6 +12,7 @@
 		E92BF73C2BAC2B6B00E690BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E92BF73B2BAC2B6B00E690BC /* Assets.xcassets */; };
 		E92BF73F2BAC2B6B00E690BC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E92BF73E2BAC2B6B00E690BC /* Preview Assets.xcassets */; };
 		E92BF7462BAC2E6900E690BC /* FavoriteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92BF7452BAC2E6900E690BC /* FavoriteModel.swift */; };
+		E9E301CC2BAD7E8500C9BC7F /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E301CB2BAD7E8500C9BC7F /* DetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		E92BF73B2BAC2B6B00E690BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E92BF73E2BAC2B6B00E690BC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E92BF7452BAC2E6900E690BC /* FavoriteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteModel.swift; sourceTree = "<group>"; };
+		E9E301CB2BAD7E8500C9BC7F /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 				E92BF7372BAC2B6A00E690BC /* FavoriteBookApp.swift */,
 				E92BF7392BAC2B6A00E690BC /* ContentView.swift */,
 				E92BF7452BAC2E6900E690BC /* FavoriteModel.swift */,
+				E9E301CB2BAD7E8500C9BC7F /* DetailsView.swift */,
 				E92BF73B2BAC2B6B00E690BC /* Assets.xcassets */,
 				E92BF73D2BAC2B6B00E690BC /* Preview Content */,
 			);
@@ -141,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E92BF7462BAC2E6900E690BC /* FavoriteModel.swift in Sources */,
+				E9E301CC2BAD7E8500C9BC7F /* DetailsView.swift in Sources */,
 				E92BF73A2BAC2B6A00E690BC /* ContentView.swift in Sources */,
 				E92BF7382BAC2B6A00E690BC /* FavoriteBookApp.swift in Sources */,
 			);
