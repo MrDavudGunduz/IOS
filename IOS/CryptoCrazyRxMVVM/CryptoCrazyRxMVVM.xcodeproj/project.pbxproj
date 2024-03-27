@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E96A6AE52BB4191C00FCCF68 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96A6AE42BB4191C00FCCF68 /* WebService.swift */; };
 		E98726622BB40AE20021479E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98726612BB40AE20021479E /* AppDelegate.swift */; };
 		E98726642BB40AE20021479E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98726632BB40AE20021479E /* SceneDelegate.swift */; };
 		E98726662BB40AE20021479E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98726652BB40AE20021479E /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E96A6AE42BB4191C00FCCF68 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		E987265E2BB40AE20021479E /* CryptoCrazyRxMVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoCrazyRxMVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E98726612BB40AE20021479E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E98726632BB40AE20021479E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +41,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E96A6AE32BB4190300FCCF68 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				E96A6AE42BB4191C00FCCF68 /* WebService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		E98726552BB40AE20021479E = {
 			isa = PBXGroup;
 			children = (
@@ -58,7 +68,7 @@
 		E98726602BB40AE20021479E /* CryptoCrazyRxMVVM */ = {
 			isa = PBXGroup;
 			children = (
-				E987267A2BB40DD30021479E /* Servis */,
+				E96A6AE32BB4190300FCCF68 /* Service */,
 				E98726772BB40CF90021479E /* Model */,
 				E98726762BB40CEF0021479E /* ViewModel */,
 				E98726752BB40CE70021479E /* View */,
@@ -93,13 +103,6 @@
 				E987267C2BB40F920021479E /* CryptoModel.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		E987267A2BB40DD30021479E /* Servis */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Servis;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,6 +179,7 @@
 				E98726662BB40AE20021479E /* ViewController.swift in Sources */,
 				E98726622BB40AE20021479E /* AppDelegate.swift in Sources */,
 				E987267D2BB40F920021479E /* CryptoModel.swift in Sources */,
+				E96A6AE52BB4191C00FCCF68 /* WebService.swift in Sources */,
 				E98726642BB40AE20021479E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
