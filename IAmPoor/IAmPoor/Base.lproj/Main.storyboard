@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="IAmPoor" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dont ask me for money" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yxm-2f-Ieb">
+                                <rect key="frame" x="46" y="156" width="291" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Sef-eZ-Y3D"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" red="0.94901960784313721" green="0.89803921568627454" blue="0.74901960784313726" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I AM POOR " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZcZ-zy-9bv">
+                                <rect key="frame" x="46" y="230" width="291" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="Y2h-YX-xqe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <color key="textColor" red="0.94901960784313721" green="0.89803921568627454" blue="0.74901960784313726" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rock" translatesAutoresizingMaskIntoConstraints="NO" id="kop-s7-RTa">
+                                <rect key="frame" x="46" y="332" width="291" height="238"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.14509803921568626" green="0.44313725490196076" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ZcZ-zy-9bv" firstAttribute="top" secondItem="yxm-2f-Ieb" secondAttribute="bottom" constant="44" id="20l-1C-QZp"/>
+                            <constraint firstItem="yxm-2f-Ieb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="97" id="JsA-Yh-DMv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kop-s7-RTa" secondAttribute="bottom" constant="248" id="XhN-Ax-8B6"/>
+                            <constraint firstItem="ZcZ-zy-9bv" firstAttribute="leading" secondItem="kop-s7-RTa" secondAttribute="leading" id="b8t-tb-XIr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yxm-2f-Ieb" secondAttribute="trailing" constant="56" id="be2-8b-p71"/>
+                            <constraint firstItem="yxm-2f-Ieb" firstAttribute="trailing" secondItem="ZcZ-zy-9bv" secondAttribute="trailing" id="c7z-NZ-phQ"/>
+                            <constraint firstItem="yxm-2f-Ieb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="46" id="iu1-zW-j5A"/>
+                            <constraint firstItem="kop-s7-RTa" firstAttribute="top" secondItem="ZcZ-zy-9bv" secondAttribute="bottom" constant="32" id="ocZ-1u-XEj"/>
+                            <constraint firstItem="yxm-2f-Ieb" firstAttribute="leading" secondItem="ZcZ-zy-9bv" secondAttribute="leading" id="onF-S3-8ct"/>
+                            <constraint firstItem="ZcZ-zy-9bv" firstAttribute="trailing" secondItem="kop-s7-RTa" secondAttribute="trailing" id="x1x-gj-0r4"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="135.1145038167939" y="3.5211267605633805"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="rock" width="1256" height="787"/>
+    </resources>
+</document>
