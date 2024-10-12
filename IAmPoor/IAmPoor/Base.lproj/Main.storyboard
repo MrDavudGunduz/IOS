@@ -10,7 +10,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="IAmPoor" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="IAmPoor" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -18,7 +18,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dont ask me for money" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yxm-2f-Ieb">
                                 <rect key="frame" x="46" y="156" width="291" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Sef-eZ-Y3D"/>
+                                    <constraint firstAttribute="height" constant="30" id="J0X-x2-UvK"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <color key="textColor" red="0.94901960784313721" green="0.89803921568627454" blue="0.74901960784313726" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -27,38 +27,81 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I AM POOR " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZcZ-zy-9bv">
                                 <rect key="frame" x="46" y="230" width="291" height="70"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="Y2h-YX-xqe"/>
+                                    <constraint firstAttribute="height" constant="70" id="VLW-8e-5ac"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <color key="textColor" red="0.94901960784313721" green="0.89803921568627454" blue="0.74901960784313726" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rock" translatesAutoresizingMaskIntoConstraints="NO" id="kop-s7-RTa">
-                                <rect key="frame" x="46" y="332" width="291" height="238"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rock" translatesAutoresizingMaskIntoConstraints="NO" id="SMs-ja-2TP">
+                                <rect key="frame" x="46" y="332" width="291" height="297"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.14509803921568626" green="0.44313725490196076" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="ZcZ-zy-9bv" firstAttribute="top" secondItem="yxm-2f-Ieb" secondAttribute="bottom" constant="44" id="20l-1C-QZp"/>
-                            <constraint firstItem="yxm-2f-Ieb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="97" id="JsA-Yh-DMv"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kop-s7-RTa" secondAttribute="bottom" constant="248" id="XhN-Ax-8B6"/>
-                            <constraint firstItem="ZcZ-zy-9bv" firstAttribute="leading" secondItem="kop-s7-RTa" secondAttribute="leading" id="b8t-tb-XIr"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yxm-2f-Ieb" secondAttribute="trailing" constant="56" id="be2-8b-p71"/>
-                            <constraint firstItem="yxm-2f-Ieb" firstAttribute="trailing" secondItem="ZcZ-zy-9bv" secondAttribute="trailing" id="c7z-NZ-phQ"/>
-                            <constraint firstItem="yxm-2f-Ieb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="46" id="iu1-zW-j5A"/>
-                            <constraint firstItem="kop-s7-RTa" firstAttribute="top" secondItem="ZcZ-zy-9bv" secondAttribute="bottom" constant="32" id="ocZ-1u-XEj"/>
-                            <constraint firstItem="yxm-2f-Ieb" firstAttribute="leading" secondItem="ZcZ-zy-9bv" secondAttribute="leading" id="onF-S3-8ct"/>
-                            <constraint firstItem="ZcZ-zy-9bv" firstAttribute="trailing" secondItem="kop-s7-RTa" secondAttribute="trailing" id="x1x-gj-0r4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="SMs-ja-2TP" secondAttribute="bottom" constant="189" id="2jE-8h-zBy"/>
+                            <constraint firstItem="yxm-2f-Ieb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="46" id="CaJ-AT-2dj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yxm-2f-Ieb" secondAttribute="trailing" constant="56" id="Jgf-eM-EIG"/>
+                            <constraint firstItem="yxm-2f-Ieb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="97" id="Rq3-6X-ghF"/>
+                            <constraint firstItem="SMs-ja-2TP" firstAttribute="top" secondItem="ZcZ-zy-9bv" secondAttribute="bottom" constant="32" id="T2P-QB-pwb"/>
+                            <constraint firstItem="ZcZ-zy-9bv" firstAttribute="leading" secondItem="SMs-ja-2TP" secondAttribute="leading" id="Ujb-n4-UOB"/>
+                            <constraint firstItem="ZcZ-zy-9bv" firstAttribute="trailing" secondItem="SMs-ja-2TP" secondAttribute="trailing" id="azT-Q7-iv8"/>
+                            <constraint firstItem="ZcZ-zy-9bv" firstAttribute="top" secondItem="yxm-2f-Ieb" secondAttribute="bottom" constant="44" id="hUN-8c-2il"/>
+                            <constraint firstItem="yxm-2f-Ieb" firstAttribute="trailing" secondItem="ZcZ-zy-9bv" secondAttribute="trailing" id="vAD-9j-Wdv"/>
+                            <constraint firstItem="yxm-2f-Ieb" firstAttribute="leading" secondItem="ZcZ-zy-9bv" secondAttribute="leading" id="xnF-Tk-EXd"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="stoneView" destination="SMs-ja-2TP" id="l8w-fv-wEW"/>
+                        <segue destination="1ye-ui-2qq" kind="presentation" identifier="toPoorManDetails" modalPresentationStyle="fullScreen" id="3UE-67-uMq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="135.1145038167939" y="3.5211267605633805"/>
         </scene>
+        <!--Poor Man Details-->
+        <scene sceneID="f2T-dz-gOI">
+            <objects>
+                <viewController id="1ye-ui-2qq" customClass="PoorManDetails" customModule="IAmPoor" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="J9s-ke-ebL" customClass="PoorMan">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="poorMan" translatesAutoresizingMaskIntoConstraints="NO" id="p9D-5f-NFu">
+                                <rect key="frame" x="46" y="231" width="301" height="419"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Give me money " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d7m-UT-ju7">
+                                <rect key="frame" x="89" y="121" width="233" height="72"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="72" id="dTR-qx-cSn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="eLo-OX-BLw"/>
+                        <color key="backgroundColor" red="0.94901960784313721" green="0.89803921568627454" blue="0.74901960784313726" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="eLo-OX-BLw" firstAttribute="bottom" secondItem="p9D-5f-NFu" secondAttribute="bottom" constant="202" id="1mU-Ba-j5T"/>
+                            <constraint firstItem="p9D-5f-NFu" firstAttribute="leading" secondItem="eLo-OX-BLw" secondAttribute="leading" constant="46" id="FX8-nT-UeF"/>
+                            <constraint firstItem="p9D-5f-NFu" firstAttribute="centerX" secondItem="J9s-ke-ebL" secondAttribute="centerX" id="Rwr-7m-bYe"/>
+                            <constraint firstItem="p9D-5f-NFu" firstAttribute="top" secondItem="d7m-UT-ju7" secondAttribute="bottom" constant="38" id="UZw-QD-16O"/>
+                            <constraint firstItem="d7m-UT-ju7" firstAttribute="top" secondItem="eLo-OX-BLw" secondAttribute="top" constant="121" id="Vao-Kp-0nI"/>
+                            <constraint firstItem="eLo-OX-BLw" firstAttribute="trailing" secondItem="d7m-UT-ju7" secondAttribute="trailing" constant="71" id="l21-Qw-sD1"/>
+                            <constraint firstItem="d7m-UT-ju7" firstAttribute="leading" secondItem="eLo-OX-BLw" secondAttribute="leading" constant="89" id="reV-yW-CY6"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kGj-cQ-2N8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="913.74045801526711" y="3.5211267605633805"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="poorMan" width="1279" height="1280"/>
         <image name="rock" width="1256" height="787"/>
     </resources>
 </document>
