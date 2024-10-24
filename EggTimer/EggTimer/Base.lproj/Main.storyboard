@@ -121,6 +121,22 @@
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nJN-th-c5K" userLabel="Timer View">
                                         <rect key="frame" x="0.0" y="568.5" width="374" height="245.5"/>
+                                        <subviews>
+                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" translatesAutoresizingMaskIntoConstraints="NO" id="heG-H0-aij">
+                                                <rect key="frame" x="0.0" y="118" width="374" height="11"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="10" id="MXd-io-g7D"/>
+                                                </constraints>
+                                                <color key="progressTintColor" red="0.94981971153846156" green="0.74008413461538458" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="trackTintColor" red="0.671875" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </progressView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="heG-H0-aij" firstAttribute="centerX" secondItem="nJN-th-c5K" secondAttribute="centerX" id="1Wf-wu-mk0"/>
+                                            <constraint firstAttribute="trailing" secondItem="heG-H0-aij" secondAttribute="trailing" id="Ry2-4l-wR2"/>
+                                            <constraint firstItem="heG-H0-aij" firstAttribute="leading" secondItem="nJN-th-c5K" secondAttribute="leading" id="f2C-E4-kZF"/>
+                                            <constraint firstItem="heG-H0-aij" firstAttribute="centerY" secondItem="nJN-th-c5K" secondAttribute="centerY" id="nZs-pp-KUU"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                             </stackView>
@@ -134,6 +150,10 @@
                             <constraint firstAttribute="trailingMargin" secondItem="wI6-ag-afn" secondAttribute="trailing" id="dky-ZA-Z3J"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="barProgressView" destination="heG-H0-aij" id="rfQ-45-1e0"/>
+                        <outlet property="doneTextLabel" destination="XLm-5r-pSP" id="Eys-FB-NG5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
