@@ -17,37 +17,45 @@ class ViewController: UIViewController {
     @IBOutlet weak var questionText: UILabel!
     var questionNumber = 0
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
         barProgress.progress = 0
+        
         updateUI()
         
     }
 
     @IBAction func aswerClickedButton(_ sender: UIButton) {
         
+        let userAnswer = sender.currentTitle!
+        
         if questionNumber < quiz.count {
             
-            if sender.currentTitle! == quiz[questionNumber][1] {
-                updateUI()
+            if userAnswer == quiz[questionNumber].answer{
+                sender.backgroundColor = .green
+                
             }else {
-                updateUI()
+                sender.backgroundColor = .red
             }
+            
+            Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector (updateUI), userInfo: nil, repeats: false)
             
         }else {
             barProgress.progress = 0
             questionNumber = 0
-            updateUI()
         }
-       
+        
     }
-    
-    func updateUI(){
-        questionText.text = quiz[questionNumber][0]
+        
+    @objc func updateUI(){
+        questionText.text = quiz[questionNumber].text
+        barProgress.progress = Float(questionNumber + 1) / Float(quiz.count)
         questionNumber += 1
-        barProgress.progress += 0.2
+        trueButton.backgroundColor = UIColor.clear
+        falseButton.backgroundColor = UIColor.clear
     }
 }
 

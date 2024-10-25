@@ -14,6 +14,7 @@
 		AD4BDE5322D878BC005BA4CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD4BDE5222D878BC005BA4CC /* Assets.xcassets */; };
 		AD4BDE5622D878BC005BA4CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD4BDE5422D878BC005BA4CC /* LaunchScreen.storyboard */; };
 		AD7631B622F9851900C6E71B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AD7631B522F9851900C6E71B /* README.md */; };
+		E9338C292CCBC56200EB2476 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9338C282CCBC56200EB2476 /* Question.swift */; };
 		E9FC147D2CCA79D800F40DE2 /* QuizQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FC147C2CCA79D800F40DE2 /* QuizQuestions.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		AD4BDE5522D878BC005BA4CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AD4BDE5722D878BC005BA4CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD7631B522F9851900C6E71B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		E9338C282CCBC56200EB2476 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		E9FC147C2CCA79D800F40DE2 /* QuizQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizQuestions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,6 +71,7 @@
 				AD4BDE5422D878BC005BA4CC /* LaunchScreen.storyboard */,
 				AD4BDE5722D878BC005BA4CC /* Info.plist */,
 				E9FC147C2CCA79D800F40DE2 /* QuizQuestions.swift */,
+				E9338C282CCBC56200EB2476 /* Question.swift */,
 			);
 			path = "Quizzler-iOS13";
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9338C292CCBC56200EB2476 /* Question.swift in Sources */,
 				AD4BDE4E22D878BA005BA4CC /* ViewController.swift in Sources */,
 				AD4BDE4A22D878BA005BA4CC /* AppDelegate.swift in Sources */,
 				E9FC147D2CCA79D800F40DE2 /* QuizQuestions.swift in Sources */,

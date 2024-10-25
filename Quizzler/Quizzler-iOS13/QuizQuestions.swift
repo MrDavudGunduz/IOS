@@ -8,4 +8,16 @@
 
 import Foundation
 
-public let quiz = [[" Selecting the decision tree split (at each node as you move down the tree) that maximizes information gain will guarantee an optimal decision tree","False"],["If we know that the conditional independence assumptions made by Naïve Bayes are not true for our problem, and we have lots of training data, we might prefer Logistic Regression over Naive Bayes for a particular learning task.","True"],["The claim by a project team that their method is good based on the low training error that they reported is correct.","False"],["A project team split their data into training and test. Using their training data and cross-validation, they chose the best parameter setting. They built a model using these parameters and their training data, and then report their error on test data.","True"],["Reducing the number of leaves in a decision tree will increase the Bias and decrease the Variance","True"]]
+let quiz = [
+    Question(text: "A slug's blood is green.", answer: "True"),
+          Question(text: "Approximately one quarter of human bones are in the feet.", answer: "True"),
+          Question(text: "The total surface area of two human lungs is approximately 70 square metres.", answer: "True"),
+          Question(text: "In West Virginia, USA, if you accidentally hit an animal with your car, you are free to take it home to eat.", answer: "True"),
+          Question(text: "In London, UK, if you happen to die in the House of Parliament, you are technically entitled to a state funeral, because the building is considered too sacred a place.", answer: "False"),
+          Question(text: "It is illegal to pee in the Ocean in Portugal.", answer: "True"),
+          Question(text: "You can lead a cow down stairs but not up stairs.", answer: "False"),
+          Question(text: "Google was originally called 'Backrub'.", answer: "True"),
+          Question(text: "Buzz Aldrin's mother's maiden name was 'Moon'.", answer: "True"),
+          Question(text: "The loudest sound produced by any animal is 188 decibels. That animal is the African Elephant.", answer: "False"),
+          Question(text: "No piece of square dry paper can be folded in half more than 7 times.", answer: "False"),
+          Question(text: "Chocolate affects a dog's heart and nervous system; a few ounces are enough to kill a small dog.", answer: "True") ]
