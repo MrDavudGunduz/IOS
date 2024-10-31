@@ -14,21 +14,27 @@ class ViewController: UIViewController {
     @IBOutlet weak var choice1Button: UIButton!
     @IBOutlet weak var choice2Button: UIButton!
     var storyBrain = StoryBrain()
+    var chosenUser : String?
+    var chosenDestination : Int?
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
-       
+        choice1Button.tag = 0
+        choice2Button.tag = 1
         updateUI()
         
     }
 
     @IBAction func choiceClickedButtons(_ sender: UIButton) {
+        
     
+        chosenUser = sender.currentTitle!
+        
         Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector (updateUI), userInfo: nil, repeats: false)
         
-        storyBrain.nextStory()
+        storyBrain.nextStory(chosenUser!)
     }
     
     @objc func updateUI() {

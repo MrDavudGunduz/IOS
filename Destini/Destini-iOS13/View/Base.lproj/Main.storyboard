@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_12" orientation="landscape" appearance="light"/>
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
@@ -14,17 +14,17 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Destini_iOS13" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="852" height="393"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="AVD-Xv-zfI">
-                                <rect key="frame" x="59" y="-700" width="734" height="1793"/>
+                                <rect key="frame" x="0.0" y="-612.5" width="320" height="1793"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="b0T-eg-tGE">
-                                <rect key="frame" x="79" y="0.0" width="694" height="372"/>
+                                <rect key="frame" x="16" y="20" width="288" height="548"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Story Text" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rAa-Vz-35u">
-                                        <rect key="frame" x="0.0" y="0.0" width="694" height="132"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="308"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -36,7 +36,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="9QG-pg-Frw">
-                                        <rect key="frame" x="0.0" y="152" width="694" height="100"/>
+                                        <rect key="frame" x="0.0" y="328" width="288" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="3Xd-kg-zdV"/>
                                         </constraints>
@@ -55,7 +55,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="fwF-55-PpX">
-                                        <rect key="frame" x="0.0" y="272" width="694" height="100"/>
+                                        <rect key="frame" x="0.0" y="448" width="288" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="ymn-43-hmb"/>
                                         </constraints>
@@ -102,8 +102,8 @@
     </scenes>
     <resources>
         <image name="background" width="958" height="1793"/>
-        <image name="choice1Background" width="1370.6666259765625" height="363"/>
-        <image name="choice2Background" width="1370.6666259765625" height="363"/>
+        <image name="choice1Background" width="1370.5" height="363"/>
+        <image name="choice2Background" width="1370.5" height="363"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
