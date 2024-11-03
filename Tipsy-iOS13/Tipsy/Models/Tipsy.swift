@@ -9,13 +9,15 @@
 import Foundation
 
 struct Tipsy {
-    var totalBill: Double
+    var bill: Float
+    var totalBill: Float
     var tipPercentage: Int
     var numberOfPeople: Int
-    var totalTip: Double
-    var totalPerPerson: Double
+    var totalTip: Float
+    var totalPerPerson: Float
     
-    init(totalBill: Double, tipPercentage: Int, numberOfPeople: Int, totalTip: Double, totalPerPerson: Double) {
+    init(bill: Float, totalBill: Float, tipPercentage: Int, numberOfPeople: Int, totalTip: Float, totalPerPerson: Float) {
+        self.bill = bill
         self.totalBill = totalBill
         self.tipPercentage = tipPercentage
         self.numberOfPeople = numberOfPeople
