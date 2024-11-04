@@ -45,6 +45,9 @@
                                                         <state key="normal" title="0%">
                                                             <color key="titleColor" red="0.0" green="0.69019607839999997" blue="0.41960784309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="percentageButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="h4g-Hg-hK7"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7y6-Kf-yF0">
                                                         <rect key="frame" x="95.333333333333329" y="0.0" width="162.33333333333337" height="54"/>
@@ -56,6 +59,9 @@
                                                         <state key="normal" title="10%">
                                                             <color key="titleColor" red="0.0" green="0.69019607839999997" blue="0.41960784309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="percentageButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a40-Lj-JAn"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UtR-dU-EKt">
                                                         <rect key="frame" x="257.66666666666669" y="0.0" width="95.333333333333314" height="54"/>
@@ -67,6 +73,9 @@
                                                         <state key="normal" title="20%">
                                                             <color key="titleColor" red="0.0" green="0.69019607839999997" blue="0.41960784309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="percentageButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vtu-eZ-mNT"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -102,6 +111,9 @@
                                                             <constraint firstAttribute="width" constant="94" id="sc0-qS-1tJ"/>
                                                         </constraints>
                                                         <color key="tintColor" red="0.0" green="0.59227246050000004" blue="0.347086966" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <connections>
+                                                            <action selector="stepperedValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="JYI-XY-aAl"/>
+                                                        </connections>
                                                     </stepper>
                                                 </subviews>
                                             </stackView>
@@ -167,6 +179,9 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10f"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="calculatePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4I5-eU-fOB"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ptx-Zl-eGc"/>
@@ -184,6 +199,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="billTextField" destination="QDm-4I-R22" id="jVt-s9-8kp"/>
+                        <outlet property="splitTextLabel" destination="bSy-Yc-886" id="ijZ-FG-74M"/>
+                        <outlet property="tenPersantageUIB" destination="7y6-Kf-yF0" id="5WT-iH-2UG"/>
+                        <outlet property="twentyPersantageUIB" destination="UtR-dU-EKt" id="peI-X2-Ot5"/>
+                        <outlet property="zeroPersantageUIB" destination="XzR-0E-Xf7" id="Q6F-tk-lfa"/>
                         <segue destination="Dnf-m2-FPm" kind="presentation" identifier="toDetailsVC" id="GhU-aW-Xw6"/>
                     </connections>
                 </viewController>
@@ -246,6 +266,9 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10f"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="recalculatePressed:" destination="Dnf-m2-FPm" eventType="touchUpInside" id="OF3-eV-xqN"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Split between 2 people, with 10% tip." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HGt-bn-sCv">
                                 <rect key="frame" x="50" y="305" width="293" height="117"/>
@@ -270,6 +293,10 @@
                             <constraint firstItem="ZCe-Te-efL" firstAttribute="top" secondItem="DNW-gk-FsX" secondAttribute="top" id="zdY-59-9ry"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="explanationTextLabel" destination="HGt-bn-sCv" id="ct8-PZ-k6G"/>
+                        <outlet property="resultTextLabel" destination="uLJ-ii-hft" id="CAj-0M-Kh6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uLi-Eb-NGd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

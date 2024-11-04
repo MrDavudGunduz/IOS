@@ -10,11 +10,19 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    @IBOutlet weak var splitTextLabel: UILabel!
+    @IBOutlet weak var twentyPersantageUIB: UIButton!
+    @IBOutlet weak var tenPersantageUIB: UIButton!
+    @IBOutlet weak var zeroPersantageUIB: UIButton!
+    @IBOutlet weak var billTextField: UILabel!
+    
+    @IBAction func percentageButtonClicked(_ sender: Any) {
     }
-
-
+    
+    @IBAction func stepperedValueChanged(_ sender: Any) {
+    }
+    
+    @IBAction func calculatePressed(_ sender: UIButton) {
+    }
 }
 

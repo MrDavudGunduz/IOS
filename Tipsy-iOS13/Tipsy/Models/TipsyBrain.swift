@@ -17,18 +17,13 @@ struct TipsyBrain{
         tipsy.tipPercentage = tipPercentage
         tipsy.numberOfPeople = numberOfPeople
         
-        tipsy.totalPerPerson = getTotalBill() / Float(tipsy.numberOfPeople)
+        tipsy.totalTip = ((bill * Float(tipPercentage)) / 100)
+        tipsy.totalBill = tipsy.totalTip + tipsy.bill
+        tipsy.totalPerPerson = Float(tipsy.totalBill) / Float(numberOfPeople)
+        
     }
     
-    mutating func getTotalTip() -> Float {
-        tipsy.totalTip = Float(tipsy.bill * Float(tipsy.tipPercentage) / 100)
-        return tipsy.totalTip
-    }
-    
-    mutating func getTotalBill() -> Float {
-        tipsy.totalBill = Float(tipsy.bill) + getTotalTip()
-        return tipsy.totalBill
-    }
+  
     
     
     
